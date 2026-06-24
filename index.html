@@ -1,61 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Vikram Constructions | Builders & Developers</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikram Constructions | Builders & Developers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #1e3a8a;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/1015/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+            transform: translateY(-2px);
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .project-card {
+            overflow: hidden;
+        }
+        
+        .project-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
+    </style>
 </head>
-<body>
-<header>
-<div class="logo">VC <span>VIKRAM CONSTRUCTIONS</span></div>
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+<body class="font-sans">
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between px-6 py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-blue-900 text-white w-12 h-12 flex items-center justify-center text-3xl font-bold rounded">VC</div>
+                    <div>
+                        <div class="text-2xl font-bold tracking-tight text-blue-950">VIKRAM</div>
+                        <div class="text-xs text-blue-700 -mt-1">CONSTRUCTIONS</div>
+                        <div class="text-[10px] text-gray-500">BUILDERS & DEVELOPERS</div>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#" class="nav-link text-blue-900">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-blue-900">About Us</a>
+                    <a href="#services" class="nav-link text-gray-600 hover:text-blue-900">Services</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-blue-900">Projects</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-900">Why Choose Us</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-blue-900">Contact</a>
+                </nav>
+                
+                <!-- Contact -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:+918198826000" 
+                       class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 81988 26000</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile nav -->
+        <div class="md:hidden border-t px-6 py-3 text-sm flex justify-center gap-6 text-gray-600">
+            <a href="#" class="hover:text-blue-900">Home</a>
+            <a href="#about" class="hover:text-blue-900">About</a>
+            <a href="#services" class="hover:text-blue-900">Services</a>
+        </div>
+    </header>
 
-<section class="hero">
-<div class="hero-content">
-<h1>Building Dreams. Creating Trust.</h1>
-<p>Premium residential, commercial and development projects across Punjab.</p>
-<a class="btn" href="#contact">Get Free Consultation</a>
-</div>
-</section>
+    <!-- HERO -->
+    <section class="hero-bg h-screen flex items-center text-white relative">
+        <div class="max-w-7xl mx-auto px-6 z-10">
+            <div class="max-w-2xl">
+                <div class="inline-block bg-blue-600 text-white text-sm font-medium px-5 py-2 rounded mb-4">
+                    BUILDING YOUR DREAMS
+                </div>
+                <h1 class="text-6xl md:text-7xl font-bold leading-none mb-6">
+                    WE BUILD<br>YOUR FUTURE
+                </h1>
+                <p class="text-xl text-gray-100 mb-8 max-w-md">
+                    Vikram Constructions is a trusted name in the construction industry, delivering excellence in every project we build.
+                </p>
+                <a href="#contact" 
+                   class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
+                    GET A QUOTE
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            <div class="text-sm mb-2">SCROLL TO EXPLORE</div>
+            <i class="fas fa-chevron-down animate-bounce text-2xl"></i>
+        </div>
+    </section>
 
-<section id="about" class="section">
-<h2>About Vikram Constructions</h2>
-<p>We deliver high-quality construction projects with a focus on craftsmanship, reliability, transparency and customer satisfaction.</p>
-</section>
+    <!-- CONTACT BAR -->
+    <div class="bg-blue-950 text-white py-6">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
+            <div class="flex items-start gap-4">
+                <i class="fas fa-map-marker-alt text-blue-400 text-xl mt-1"></i>
+                <div>
+                    <div class="font-medium">Shop No. 1, Golf Link,</div>
+                    <div>Main Hambran Road, Ludhiana, Punjab - 141008</div>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <i class="fas fa-phone text-blue-400 text-xl mt-1"></i>
+                <div>
+                    <div class="font-medium">+91 81988 26000</div>
+                    <div class="text-blue-300">Call Us Anytime</div>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <i class="fas fa-envelope text-blue-400 text-xl mt-1"></i>
+                <div>
+                    <div class="font-medium">sidhujamseria@gmail.com</div>
+                    <div class="text-blue-300">Send Us Email</div>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <i class="fas fa-clock text-blue-400 text-xl mt-1"></i>
+                <div>
+                    <div class="font-medium">Mon - Sat: 9:00 AM - 6:00 PM</div>
+                    <div class="text-blue-300">Sunday: Closed</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<section id="services" class="section gray">
-<h2>Our Services</h2>
-<div class="cards">
-<div class="card"><h3>Residential Construction</h3><p>Luxury homes and villas built to last.</p></div>
-<div class="card"><h3>Commercial Projects</h3><p>Modern offices, retail and business spaces.</p></div>
-<div class="card"><h3>Renovation</h3><p>Transform existing properties professionally.</p></div>
-<div class="card"><h3>Project Management</h3><p>End-to-end execution and supervision.</p></div>
-</div>
-</section>
+    <!-- ABOUT US -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <div class="text-blue-600 font-medium mb-3">ABOUT US</div>
+                    <h2 class="text-5xl font-bold leading-tight text-gray-900 mb-8">
+                        Building Better<br>for Over a Decade
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-10">
+                        Vikram Constructions is committed to delivering high-quality construction services in residential, 
+                        commercial, and industrial sectors. With a team of experienced professionals, we ensure timely 
+                        completion, superior quality, and customer satisfaction.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-1">10+</div>
+                            <div class="text-sm text-gray-500">Years of Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-1">150+</div>
+                            <div class="text-sm text-gray-500">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-1">100%</div>
+                            <div class="text-sm text-gray-500">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <img src="https://picsum.photos/id/1015/800/600" 
+                             class="rounded-2xl shadow-xl" alt="Modern Apartment Building">
+                        <div class="space-y-6">
+                            <img src="https://picsum.photos/id/106/800/380" 
+                                 class="rounded-2xl shadow-xl" alt="Luxury Interior">
+                            <img src="https://picsum.photos/id/201/800/380" 
+                                 class="rounded-2xl shadow-xl" alt="Modern Villa">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="projects" class="section">
-<h2>Featured Projects</h2>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200">
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200">
-</div>
-</section>
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-blue-600 font-medium">OUR SERVICES</div>
+                <h2 class="text-5xl font-bold mt-3">What We Offer</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-3xl shadow border border-gray-100 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Residential Construction</h3>
+                    <p class="text-gray-600">We build beautiful and durable homes tailored to your needs.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-3xl shadow border border-gray-100 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Commercial Construction</h3>
+                    <p class="text-gray-600">Modern and functional commercial spaces that inspire business.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-3xl shadow border border-gray-100 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Renovation & Remodeling</h3>
+                    <p class="text-gray-600">Upgrade and transform your existing spaces with our experts.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-3xl shadow border border-gray-100 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-user-tie text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Project Management</h3>
+                    <p class="text-gray-600">End-to-end project management with transparency.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-3xl shadow border border-gray-100 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Property Development</h3>
+                    <p class="text-gray-600">We develop premium properties with high value and trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>Shop No. 1, Golf Link, Main Hambran Road, Ludhiana, Punjab</p>
-<p>📞 +91 98598 00042</p>
-<p>✉️ sidhujamseria@gmail.com</p>
-</section>
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <div class="text-blue-600 font-medium">OUR PROJECTS</div>
+                    <h2 class="text-5xl font-bold">Our Recent Projects</h2>
+                </div>
+                <a href="#" 
+                   class="hidden md:flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-medium hover:bg-blue-700 transition-colors">
+                    VIEW ALL PROJECTS
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-6">
+                <div class="project-card group rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/1015/600/420" class="w-full h-64 object-cover" alt="Project 1">
+                </div>
+                <div class="project-card group rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/133/600/420" class="w-full h-64 object-cover" alt="Project 2">
+                </div>
+                <div class="project-card group rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/201/600/420" class="w-full h-64 object-cover" alt="Project 3">
+                </div>
+                <div class="project-card group rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/251/600/420" class="w-full h-64 object-cover" alt="Project 4">
+                </div>
+                <div class="project-card group rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/316/600/420" class="w-full h-64 object-cover" alt="Project 5">
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center md:hidden">
+                <a href="#" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-medium">
+                    VIEW ALL PROJECTS
+                </a>
+            </div>
+        </div>
+    </section>
 
-<footer>© 2026 Vikram Constructions. All Rights Reserved.</footer>
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="bg-blue-950 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-12 gap-12">
+            <!-- Get in Touch -->
+            <div class="md:col-span-3">
+                <h3 class="text-xl font-semibold mb-6">GET IN TOUCH</h3>
+                <div class="space-y-4 text-sm">
+                    <div class="flex gap-3">
+                        <i class="fas fa-map-marker-alt mt-1 text-blue-400"></i>
+                        <div>Shop No. 1, Golf Link,<br>Main Hambran Road, Ludhiana,<br>Punjab - 141008</div>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-phone mt-1 text-blue-400"></i>
+                        <div>+91 81988 26000</div>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-envelope mt-1 text-blue-400"></i>
+                        <div>sidhujamseria@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Send Message -->
+            <div class="md:col-span-5">
+                <h3 class="text-xl font-semibold mb-6">SEND US A MESSAGE</h3>
+                <form class="space-y-5">
+                    <div class="grid grid-cols-2 gap-5">
+                        <input type="text" placeholder="Your Name" 
+                               class="bg-white/10 border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-400">
+                        <input type="email" placeholder="Your Email" 
+                               class="bg-white/10 border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-400">
+                    </div>
+                    <div class="grid grid-cols-2 gap-5">
+                        <input type="tel" placeholder="Your Phone" 
+                               class="bg-white/10 border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-400">
+                        <input type="text" placeholder="Subject" 
+                               class="bg-white/10 border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-400">
+                    </div>
+                    <textarea placeholder="Your Message" rows="5"
+                              class="w-full bg-white/10 border border-white/30 rounded-3xl px-6 py-4 focus:outline-none focus:border-blue-400"></textarea>
+                    <button type="button"
+                            class="w-full bg-white text-blue-950 hover:bg-gray-100 font-semibold py-5 rounded-3xl text-lg transition-colors">
+                        SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Location -->
+            <div class="md:col-span-4">
+                <h3 class="text-xl font-semibold mb-6">OUR LOCATION</h3>
+                <div class="bg-white/10 rounded-3xl overflow-hidden border border-white/20">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.123456789!2d75.85!3d30.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a1a!2sLudhiana!5e0!3m2!1sen!2sin!4v1720000000000" 
+                            width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 py-8 text-center text-sm text-gray-400">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>© 2026 Vikram Constructions. All Rights Reserved.</div>
+                <div>Designed with ❤️ by Vikram Constructions</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included
+        console.log('%cVikram Constructions website loaded successfully!', 'color: #1e40af; font-size: 14px; font-weight: 600');
+        
+        // Simple smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
